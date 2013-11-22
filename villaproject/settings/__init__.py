@@ -1,10 +1,12 @@
-# Django settings for villaproject project.
+import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+ROOT_DIR = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('Jeziorsa', 'jeziorski.adam@gmail.com'),
 )
 
 MANAGERS = ADMINS
@@ -63,15 +65,15 @@ MEDIA_URL = ''
 # Example: "/var/www/example.com/static/"
 STATIC_ROOT = ''
 
-# URL prefix for static files.
-# Example: "http://example.com/static/", "http://static.example.com/"
+STATIC_ROOT = os.path.join(ROOT_DIR, '..', 'collected_static')
+
 STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    # Put strings here, like "/home/html/static" or "C:/www/django/static".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+
+    os.path.join(ROOT_DIR, 'statics'),
+
 )
 
 # List of finder classes that know how to find static files in
@@ -108,9 +110,10 @@ ROOT_URLCONF = 'villaproject.urls'
 WSGI_APPLICATION = 'villaproject.wsgi.application'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+
+    "templates",
+    os.path.join(ROOT_DIR, 'templates'),
+
 )
 
 INSTALLED_APPS = (
