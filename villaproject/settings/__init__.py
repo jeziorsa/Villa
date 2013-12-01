@@ -125,6 +125,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'villaproject.main',
     'django.contrib.admin',
+    'crispy_forms'
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
