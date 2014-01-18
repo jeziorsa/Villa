@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}css/villa.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -42,7 +43,7 @@
             {% else %}
 
 
-             <form class="navbar-form navbar-right"  method="post" action=".">
+             <form class="navbar-form navbar-right"  method="post" action="login/">
             {% csrf_token %}
             <div class="form-group">
             <input type="text" name="username" placeholder="Email" class="form-control input-sm">
@@ -64,11 +65,11 @@
 
     {% block content %}
 
-        {% if user.is_authenticated %}
+    {% if user.is_authenticated %}
     <p>Welcome, {{ user.username }}. Thanks for logging in.</p>
-{% else %}
+    {% else %}
     <p>Welcome, new user. Please log in.</p>
-{% endif %}
+    {% endif %}
 
       <div>
         <h1>Villa App template</h1>
@@ -79,8 +80,7 @@
 
     </div>
 
-
-
+    <a href="{{ BASE_URL }}">Home</a> / <a href="{{ BASE_URL }}/login">Login</a> / <a href="{{ BASE_URL }}/sign_up">Sign up</a> / <a href="{{ BASE_URL }}/logout">Logout</a>
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
